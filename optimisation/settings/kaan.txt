@@ -1,0 +1,50 @@
+{
+
+
+    "general"     : {
+                     "cuda"                  : 1,
+                     "iterations"            : 100,
+                     "propagation type"      : "Bandlimited Angular Spectrum",
+                     "output directory"      : "./output",
+                     "optimisation mode"     : "Gerchberg-Saxton",
+                     "optimisation mode"     : "Double Phase",
+                     "optimisation mode"     : "Stochastic Gradient Descent",
+                     "learning rate"         : 0.04,
+                     "hologram number"       : 1
+                    },
+
+
+    "target"      : {
+                     "image filename"        : "../dataset/4k/couch_rgb.png",
+                     "depth filename"        : "../dataset/4k/couch_rgb_depth.png",
+                     "scheme"                : "defocus",
+                     "color channel"         : 1,
+                     "defocus blur size"     : 20,
+                     "number of planes"      : 3,
+                     "blur ratio"            : 0.25,
+                     "mask limits"           : [0.0, 1.0, 0.0, 1.0], 
+                     "multiplier"            : 1.0,
+                     "weights"               : [1.0, 1.0, 1.0, 0.0]
+                    },
+
+
+    "image"       : {
+                     "location"              : 0.0,
+                     "delta"                 : 0.001,
+                     "zero mode distance"    : 0.15
+                    },  
+
+
+    "slm"         : {
+                     "model"                 : "Jasper Display Educational 4k",
+                     "pixel pitch"           : 0.00000374,
+                     "resolution"            : [2400, 4094]
+                    },    
+
+
+    "beam"        : {
+                     "wavelength"            : 0.000000518
+                    }
+
+
+}
