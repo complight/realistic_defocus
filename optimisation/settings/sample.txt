@@ -13,8 +13,8 @@
 
 
     "target"      : {
-                     "image filename"        : "../dataset/test/images/couch_rgb.png",
-                     "depth filename"        : "../dataset/test/depths/couch_rgb.png",
+                     "image filename"        : "../dataset/train/images/luxHouseRender_1.png",
+                     "depth filename"        : "../dataset/train/depths/luxHouseRender_1depth_8bit.png",
                      "scheme"                : "defocus",
                      "color channel"         : 0,
                      "defocus blur size"     : 10,

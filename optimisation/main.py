@@ -13,6 +13,8 @@ from losses import MultiplaneLoss
 
 __title__ = 'Realistic Defocus Blur for Multiplane Holography'
 
+print(torch.cuda.is_available())
+
 def main():
     settings_filename='./settings/sample.txt'
     parser = argparse.ArgumentParser(description=__title__)

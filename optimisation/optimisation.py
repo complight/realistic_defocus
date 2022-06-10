@@ -1,7 +1,8 @@
 import torch
 import numpy as np
 from tqdm import tqdm
-from odak.learn.wave import wavenumber, generate_complex_field, calculate_amplitude, calculate_phase, propagate_beam, shift_w_double_phase
+from odak.learn.wave import wavenumber, generate_complex_field, calculate_amplitude, calculate_phase, propagate_beam
+from odak.learn.wave import shift_w_double_phase
 from odak.learn.tools import zero_pad, crop_center
 
 
