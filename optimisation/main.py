@@ -47,7 +47,8 @@ def main():
                                    multiplier=settings["target"]["multiplier"],
                                    blur_ratio=settings["target"]["blur ratio"],
                                    weights=settings["target"]["weights"],
-                                   scheme=settings["target"]["scheme"]
+                                   scheme=settings["target"]["scheme"],
+                                   cuda = settings["general"]["cuda"]
                                   ).to(device)
     targets, depth = loss_function.get_targets()
     for hologram_id in range(settings["general"]["hologram number"]):
@@ -65,7 +66,8 @@ def main():
                                                   mask_limits=settings["target"]["mask limits"],
                                                   zero_mode_distance=settings["image"]["zero mode distance"],
                                                   optimisation_mode=settings["general"]["optimisation mode"],
-                                                  loss_function=loss_function
+                                                  loss_function=loss_function,
+                                                  cuda = settings["general"]["cuda"]
                                                  ).to(device)
         phase, reconstructions = optimiser.optimise()
         save(settings, device, phase, reconstructions, targets, depth, hologram_id)
