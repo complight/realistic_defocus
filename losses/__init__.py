@@ -9,7 +9,7 @@ class MultiplaneLoss():
     """
 
 
-    def __init__(self, target_image, target_depth, blur_ratio=0.25, target_blur_size=10, number_of_planes=4, weights=[1., 2.1, 0.6, 0.], multiplier=1., scheme='defocus', reduction='mean', cuda=True):
+    def __init__(self, target_image, target_depth, blur_ratio=0.25, target_blur_size=10, number_of_planes=4, weights=[1., 2.1, 0.6, 0.], multiplier=1., scheme='defocus', reduction='mean', device=None):
         """
         Parameters
         ----------
@@ -31,10 +31,12 @@ class MultiplaneLoss():
                             The type of the loss, `naive` without defocus or `defocus` with defocus.
         reduction         : str
                             Reduction can either be 'mean', 'none' or 'sum'. For more see: https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html#torch.nn.MSELoss
-        cuda              : bool
-                            If set to True, device is cuda. Otherwise CPU.
+        device            : torch.device
+                            Device to be used (e.g., cuda, cpu, opencl).
         """
-        self.device           = torch.device("cuda" if cuda else "cpu")
+        self.device = device
+        if isinstance(device, type(None)):
+            self.device = torch.device("cpu")
         self.target_image     = target_image.float().to(self.device)
         self.target_depth     = target_depth.float().to(self.device)
         self.target_blur_size = target_blur_size

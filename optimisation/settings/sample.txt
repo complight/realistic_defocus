@@ -2,7 +2,7 @@
 
 
     "general"     : {
-                     "cuda"                  : 1,
+                     "device"                : "cpu",
                      "iterations"            : 60,
                      "propagation type"      : "Bandlimited Angular Spectrum",
                      "output directory"      : "./output",

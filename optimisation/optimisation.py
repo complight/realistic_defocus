@@ -15,13 +15,16 @@ class multiplane_hologram_optimiser():
                  propagation_type='TR Fresnel', 
                  number_of_iterations=10, learning_rate=0.1,
                  phase_initial=None, amplitude_initial=None,
-                 cuda=True, loss_function=None,
+                 loss_function=None,
                  mask_limits=[0.2, 0.8, 0.05, 0.95],
                  number_of_planes=4,
                  zero_mode_distance=0.15,
                  optimisation_mode='SGD',
+                 device=None
                 ):
-        self.device = torch.device("cuda" if cuda else "cpu")
+        self.device = device
+        if isinstance(self.device, type(None)):
+            self.device = torch.device("cpu")
         torch.cuda.empty_cache()
         torch.random.seed()
         self.wavelength = wavelength

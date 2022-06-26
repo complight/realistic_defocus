@@ -37,8 +37,7 @@ def main():
     target_image = load_image(settings["target"]["image filename"])[:,:,ch]/255.
 
     target_depth = 1. - load_image(settings["target"]["depth filename"])/255.
-    cuda = settings["general"]["cuda"]
-    device = torch.device("cuda" if cuda else "cpu")
+    device = torch.device(settings["general"]["device"])
     loss_function = MultiplaneLoss(
                                    target_image=target_image,
                                    target_depth=target_depth,
@@ -48,8 +47,8 @@ def main():
                                    blur_ratio=settings["target"]["blur ratio"],
                                    weights=settings["target"]["weights"],
                                    scheme=settings["target"]["scheme"],
-                                   cuda = settings["general"]["cuda"]
-                                  ).to(device)
+                                   device=device
+                                  )
     targets, depth = loss_function.get_targets()
     for hologram_id in range(settings["general"]["hologram number"]):
         optimiser = multiplane_hologram_optimiser(
@@ -67,8 +66,8 @@ def main():
                                                   zero_mode_distance=settings["image"]["zero mode distance"],
                                                   optimisation_mode=settings["general"]["optimisation mode"],
                                                   loss_function=loss_function,
-                                                  cuda = settings["general"]["cuda"]
-                                                 ).to(device)
+                                                  device=device
+                                                 )
         phase, reconstructions = optimiser.optimise()
         save(settings, device, phase, reconstructions, targets, depth, hologram_id)
 
