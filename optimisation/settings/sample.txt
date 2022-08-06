@@ -16,7 +16,7 @@
                      "image filename"        : "../dataset/test/images/couch_rgb.png",
                      "depth filename"        : "../dataset/test/depths/couch_rgb.png",
                      "scheme"                : "defocus",
-                     "color channel"         : 0,
+                     "color channel"         : 1,
                      "defocus blur size"     : 10,
                      "blur ratio"            : 0.25,
                      "number of planes"      : 6,
