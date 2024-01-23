@@ -1,0 +1,47 @@
+{
+
+
+    "general"     : {
+                     "device"                : "cuda",
+                     "iterations"            : 200,
+                     "propagation type"      : "Bandlimited Angular Spectrum",
+                     "output directory"      : "~/output/realistic_defocus/jasper",
+                     "learning rate"         : 0.04,
+                     "hologram number"       : 1
+                    },
+
+
+    "target"      : {
+                     "image filename"        : "input/4k/images/0900.png",
+                     "depth filename"        : "input/4k/depths/0900.png",
+                     "scheme"                : "defocus",
+                     "color channel"         : 1,
+                     "defocus blur size"     : 20,
+                     "blur ratio"            : 3,
+                     "number of planes"      : 6,
+                     "mask limits"           : [0.0, 1.0, 0.0, 1.0], 
+                     "multiplier"            : 1.0,
+                     "weights"               : [1.0, 1.0, 1.0, 0.0]
+                    },
+
+
+    "image"       : {
+                     "location"              : 0.0,
+                     "delta"                 : 0.001,
+                     "zero mode distance"    : 0.15
+                    },  
+
+
+    "slm"         : {
+                     "model"                 : "Jasper Display Educational 4k",
+                     "pixel pitch"           : 0.00000374,
+                     "resolution"            : [2400, 4094]
+                    },    
+
+
+    "beam"        : {
+                     "wavelength"            : 0.000000518
+                    }
+
+
+}

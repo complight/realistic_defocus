@@ -1,0 +1,48 @@
+
+{
+
+
+    "general"     : {
+                     "device"                : "cuda",
+                     "iterations"            : 60,
+                     "propagation type"      : "Bandlimited Angular Spectrum",
+                     "output directory"      : "~/output/realistic_defocus/holoeye",
+                     "learning rate"         : 0.04,
+                     "hologram number"       : 1
+                    },
+
+
+    "target"      : {
+                     "image filename"        : "input/hd/images/0900.png",
+                     "depth filename"        : "input/hd/depths/0900.png",
+                     "scheme"                : "defocus",
+                     "color channel"         : 1,
+                     "defocus blur size"     : 20,
+                     "blur ratio"            : 3,
+                     "number of planes"      : 6,
+                     "mask limits"           : [0.0, 1.0, 0.0, 1.0], 
+                     "multiplier"            : 1.0,
+                     "weights"               : [1.0, 1.0, 1.0, 0.0]
+                    },
+
+
+    "image"       : {
+                     "location"              : 0.0,
+                     "delta"                 : 0.001,
+                     "zero mode distance"    : 0.3
+                    },  
+
+
+    "slm"         : {
+                     "model"                 : "Holoeye Pluto 1.3.3",
+                     "pixel pitch"           : 0.000008,
+                     "resolution"            : [1080, 1920]
+                    },    
+
+
+    "beam"        : {
+                     "wavelength"            : 0.000000515
+                    }
+
+
+}
